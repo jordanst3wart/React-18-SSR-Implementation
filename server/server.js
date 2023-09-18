@@ -6,8 +6,15 @@ import App from "../src/App";
 
 const app = express();
 
+// server static files in assets folder
+app.use('/assets', express.static('assets/public'));
+
+
+// TODO how do you get this route to not clash with other routes
 app.get("/*", (req, res) => {
+  // TODO not found... it should be like /static/js/main.1ee581cd.js
   const entryPoint = ["/main.js"];
+
 
   const { pipe, abort: _abort } = ReactDOMServer.renderToPipeableStream(
     <StaticRouter location={req.url}>

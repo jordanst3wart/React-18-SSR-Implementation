@@ -41,25 +41,36 @@ const styles = {
 
 const App = () => {
   return (
-    <div>
-      <div style={styles.main_header}>
-        <div style={styles.header}>
-          <div style={styles.navbar}>
-            <Link to="/" style={styles.nav_link}>
-              Home
-            </Link>
-            <Link to="/about" style={styles.nav_link}>
-              About
-            </Link>
+      <html>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <title>Server side render</title>
+      </head>
+      <body>
+      <div>
+        <div style={styles.main_header}>
+          <div style={styles.header}>
+            <div style={styles.navbar}>
+              <Link to="/" style={styles.nav_link}>
+                Home
+              </Link>
+              <Link to="/about" style={styles.nav_link}>
+                About
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+        </Routes>
+      </div>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      </body>
+      </html>
   );
 };
 
